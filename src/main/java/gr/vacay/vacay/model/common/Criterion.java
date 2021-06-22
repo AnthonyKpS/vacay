@@ -1,8 +1,12 @@
-package gr.vacay.vacay.model;
+package gr.vacay.vacay.model.common;
+
+import lombok.Getter;
+import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
+@Getter
+@ToString
 public enum Criterion implements Serializable {
 
     BUSINESS("corporate offices", "enterprises"),
@@ -28,14 +32,7 @@ public enum Criterion implements Serializable {
         this.keywords = keywords;
     }
 
-    public String[] getKeywords() {
-        return keywords;
-    }
-
-    @Override
-    public String toString() {
-        return "Criterion{" +
-                "keywords=" + Arrays.toString(keywords) +
-                '}';
+    public int getNumberOfKeywords() {
+        return keywords.length;
     }
 }
